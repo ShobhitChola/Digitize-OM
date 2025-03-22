@@ -16,7 +16,7 @@ export default function Section4() {
               biggest platforms
             </h1>
             <p className="text-xl text-black/50 mt-6">
-            Don't let big brands and <br />
+            Don&apos;t let big brands and <br />
             content creators dominate <br />
             the space. Create high-quality <br />
             video content and stream it <br />

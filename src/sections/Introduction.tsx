@@ -34,7 +34,7 @@ export default function Introduction() {
                     <span>{words.map((word, wordIndex) => (
                         <span key={wordIndex} className={twMerge("transition duration-500 text-black/15", wordIndex < currentWord && 'text-black')}>{word} </span>
                     ))}</span>
-                    <span className="text-[#1A73E8] block">That's why we built <br /> Digitalis Marketing</span>
+                    <span className="text-[#1A73E8] block">That&apos;s why we built <br /> Digitalis Marketing</span>
                 </div>
             </div>
             <div className="h-[150vh]" ref={scrollTarget}></div>

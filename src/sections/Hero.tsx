@@ -15,7 +15,7 @@ export default function Hero() {
         </p>
         <div className="mt-8">
           <Link href="/contact">
-            <Button variant="primary">Let's Talk</Button>
+            <Button variant="primary">Let&apos;s Talk</Button>
           </Link>
         </div>
       </div>

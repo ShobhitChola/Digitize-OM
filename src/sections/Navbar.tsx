@@ -56,7 +56,7 @@ export default function Navbar() {
                                 </Button>
 
                             <Link href="/contact">
-                                <Button variant="primary" className="hidden md:inline-flex items-center">Let's Talk</Button>
+                                <Button variant="primary" className="hidden md:inline-flex items-center">Let&apos;s Talk</Button>
                             </Link>
                         </div>
                     </div>
@@ -93,7 +93,7 @@ export default function Navbar() {
 
 
                             <Link href="/contact">
-                                <Button variant="primary">Let's Talk</Button>
+                                <Button variant="primary">Let&apos;s Talk</Button>
                             </Link>
                             </div>
                         </motion.div>

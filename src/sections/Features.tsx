@@ -53,7 +53,7 @@ export default function Features() {
                 </FeatureCard>
                 <FeatureCard title="Generate Leads" description="Raise brand awareness with custom video ads" className="md:col-span-2 lg:col-span-1">
                     <div className="aspect-video flex items-center justify-center">
-                        <p className="text-4xl font-extrabold text-[#333333] text-center">You'll achieve <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">incredible</span> growth this year</p>
+                        <p className="text-4xl font-extrabold text-[#333333] text-center">You&apos;ll achieve <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">incredible</span> growth this year</p>
                     </div>
                 </FeatureCard>
                 <FeatureCard title="Website development" description="Increase traffic, track user activity and customize and customize accordingly" className="md:col-span-2 md:col-start-2 lg:col-span-1 lg:col-start-auto" >

@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
-
 export default function EmailPopup({ onClose }: { onClose: () => void }) {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 pointer-events-auto backdrop-blur-sm">

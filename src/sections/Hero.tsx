@@ -1,8 +1,5 @@
 import Button from "@/components/Button";
-import Image from "next/image";
-import MyImage from "../assets/images/13107892_5138883.jpg";
 import Link from "next/link";
-import Tag from "@/components/Tag";
 
 export default function Hero() {
     return <section className="py-14">

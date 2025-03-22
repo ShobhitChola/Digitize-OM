@@ -1,12 +1,5 @@
 "use client";
-import quantumLogo from "@/assets/images/quantum.svg";
-import acmeLogo from "@/assets/images/acme-corp.svg";
-import echoValleyLogo from "@/assets/images/echo-valley.svg";
-import pulseLogo from "@/assets/images/pulse.svg";
-import outsideLogo from "@/assets/images/outside.svg";
-import apexLogo from "@/assets/images/apex.svg";
-import celestialLogo from "@/assets/images/celestial.svg";
-import twiceLogo from "@/assets/images/twice.svg";
+
 import Image from "next/image";
 import { Fragment } from "react";
 import { motion } from "framer-motion";
@@ -14,13 +7,11 @@ import { motion } from "framer-motion";
 import facebooklogo from "@/assets/images/icons8-facebook.svg";
 import instagramlogo from "@/assets/images/icons8-instagram.svg";
 import linkedinlogo from "@/assets/images/icons8-linkedin.svg";
-// import redditlogo from "@/assets/images/icons8-reddit.svg";
 import snapchatlogo from "@/assets/images/icons8-snapchat.svg";
 import telegramlogo from "@/assets/images/icons8-telegram-app.svg";
 import tiktoklogo from "@/assets/images/icons8-tiktok.svg";
 import whatsapplogo from "@/assets/images/icons8-whatsapp.svg";
 import youtubelogo from "@/assets/images/icons8-youtube-logo.svg";
-import { div } from "framer-motion/client";
 
 const logos = [
     { name: "Facebook", image: facebooklogo },

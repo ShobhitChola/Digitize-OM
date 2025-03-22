@@ -7,10 +7,11 @@ export default function ContactPage() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const form = event.currentTarget;
-    const name = form.name.value;
-    const email = form.email.value;
-    const phone = form.phone.value;
+const form = event.currentTarget as HTMLFormElement;
+const name = (form.elements.namedItem("name") as HTMLInputElement).value;
+const email = (form.elements.namedItem("email") as HTMLInputElement).value;
+const phone = (form.elements.namedItem("phone") as HTMLInputElement).value;
+
 
     if (!name || !email || !phone) {
       alert("Please fill out all required fields (Name, Email, Phone).");

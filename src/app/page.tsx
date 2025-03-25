@@ -17,6 +17,7 @@ import PopupWrapper from "@/sections/PopupWrapper";
 export default function Home() {
   return (
     <>
+      <div className="w-full overflow-x-hidden">
       <PopupWrapper />
       <Navbar />
       <Hero />
@@ -32,6 +33,7 @@ export default function Home() {
       <Faqs />
       <CallToAction />
       <Footer />
+      </div>
     </>
   );
 }

@@ -20,7 +20,7 @@ export default function Section6() {
                             email campaigns
                         </h1>
                         <p className="text-lg sm:text-xl text-black/50 mt-4 sm:mt-6">
-                            It's all about the copy—engage customers and build
+                            It&apos;s all about the copy—engage customers and build
                             relationships with professionally written emails.
                         </p>
                     </div>

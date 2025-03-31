@@ -1,5 +1,9 @@
 import Thankyou from "@/sections/Thankyou";
 
 export default function ThankyouPage() {
-    return <Thankyou />;
+    const handleClose = () => {
+        console.log("Closed");
+    };
+
+    return <Thankyou onClose={handleClose} />;
 }

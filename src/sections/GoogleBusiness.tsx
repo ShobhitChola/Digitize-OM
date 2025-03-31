@@ -6,7 +6,7 @@ export default function GoogleBusiness() {
       <div className="container px-4 mx-auto">
         {/* Tag Centered */}
         <div className="flex justify-center mb-6">
-          <Tag>Google Business</Tag>
+          <Tag>Increase Ranking</Tag>
         </div>
 
         <div className="flex flex-col lg:flex-row items-center justify-center gap-10">

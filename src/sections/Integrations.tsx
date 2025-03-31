@@ -23,14 +23,19 @@ export default function Integrations() {
         <div className="container">
             <div className="grid lg:grid-cols-2 items-center lg:gap-16">
                 <div>
-                    <Tag>Testimonials</Tag>
-                    <h2 className="text-6xl font-medium mt-6">What others have to <span className="text-[#1A73E8]">say</span></h2>
-                    <p className="text-white/50 mt-4 text-lg ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos deserunt ea libero placeat est perspiciatis illo, necessitatibus, enim pariatur assumenda mollitia itaque in fugiat delectus ipsam voluptate ducimus? Perspiciatis, itaque.</p>
+                    <div className="flex justify-center">
+                        <Tag>Testimonials</Tag>
+                    </div>
+                    <h2 className="text-6xl font-medium mt-6 text-center">What others have to <span className="text-[#1A73E8]">say</span></h2>
+                    <p className="text-white mt-4 text-lg ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos deserunt ea libero placeat est perspiciatis illo, necessitatibus, enim pariatur assumenda mollitia itaque in fugiat delectus ipsam voluptate ducimus? Perspiciatis, itaque.</p>
                 </div>
                 <div>
                     <div className="h-[400px] lg:h-[800px] mt-8 lg:mt-0 overflow-hidden grid md:grid-cols-2 gap-4 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
                         <IntegrationColumn integrations={integrations} />
-                        <IntegrationColumn integrations={integrations.slice().reverse()} className="hidden md:flex" />
+                        <IntegrationColumn 
+                        integrations={integrations.slice().reverse()} 
+                        reverse
+                        className="hidden md:flex" />
                     </div>
                 </div>
             </div>

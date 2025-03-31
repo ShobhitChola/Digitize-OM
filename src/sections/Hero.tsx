@@ -16,7 +16,7 @@ export default function Hero() {
                         </p>
                         <div className="mt-6 sm:mt-8">
                             <Link href="/contact">
-                                <Button variant="primary">Let&apos;s Talk</Button>
+                                <Button variant="primary">Create Ads</Button>
                             </Link>
                         </div>
                     </div>
@@ -25,7 +25,7 @@ export default function Hero() {
                     <div className="flex justify-center mt-6">
                       <div className="relative w-[300px] h-[200px] sm:w-[400px] sm:h-[300px] md:w-[600px] md:h-[400px] lg:w-[700px] lg:h-[500px] xl:w-[800px] xl:h-[600px] rounded-3xl overflow-hidden">
                         <video
-                          src="/MP4 Youtube Ad Animation.mp4" // Replace with correct video file
+                          src="/MP4 Youtube Ad Animation.mp4"
                           autoPlay
                           loop
                           muted

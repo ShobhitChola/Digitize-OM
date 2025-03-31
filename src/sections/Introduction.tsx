@@ -1,26 +1,27 @@
 'use client'
 import Tag from "@/components/Tag";
-import { useScroll, useTransform } from "framer-motion";
+import { useScroll, useTransform, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
 
-const text = `You're racing to create exceptional work, but traditional design tools slow you down with unnecessary complexity and steep learning curves.`;
+const text = `You're working hard to attract new clients, but traditional marketing methods can slow you down with outdated strategies and high costs. That's why we created`;
 const words = text.split(' ');
 
 export default function Introduction() {
     const scrollTarget = useRef<HTMLDivElement>(null);
+
     const { scrollYProgress } = useScroll({
         target: scrollTarget, 
-        offset: ['start end', 'end start']  // 🔥 Fix: Starts as section enters, finishes when it leaves
+        offset: ['start start', 'end start']
     });
 
     const [currentWord, setCurrentWord] = useState(0);
-    const wordIndex = useTransform(scrollYProgress, [0, 1], [0, words.length - 1]); // 🔥 Fix: Prevents last word issue
+
+    const wordIndex = useTransform(scrollYProgress, [0.05, 0.95], [0, words.length - 1], { clamp: true });
 
     useEffect(() => {
         wordIndex.on('change', (latest) => {
-            console.log("Scroll Progress:", latest); // Debugging log
-            setCurrentWord(Math.round(latest)); // 🔥 Fix: Use `Math.round` for smoother transitions
+            setCurrentWord(Math.floor(latest));
         });
     }, [wordIndex]);
 
@@ -35,23 +36,22 @@ export default function Introduction() {
                         <span>Your creative process deserves better.</span>{" "}
                         <span>
                             {words.map((word, index) => (
-                                <span 
+                                <motion.span 
                                     key={index} 
                                     className={twMerge(
                                         "transition duration-300 text-black/15", 
-                                        index < currentWord && 'text-black' // 🔥 Fix: Updates smoothly
+                                        index <= currentWord && 'text-black' // 🔥 Fix: Ensures every word is updated
                                     )}
                                 >
                                     {word}{" "}
-                                </span>
+                                </motion.span>
                             ))}
                         </span>
-                        <span className="text-[#1A73E8] block">
-                            That&apos;s why we built <br /> Digitalis Marketing
-                        </span>
+                        <span className="text-[#1A73E8] block">Digitize Open Media</span>
                     </div>
                 </div>
-                <div className="h-screen" ref={scrollTarget}></div> {/* 🔥 Fix: Correct height */}
+                
+                <div className="h-[80vh]" ref={scrollTarget}></div>
             </div>
         </section>
     );

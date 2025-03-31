@@ -6,14 +6,14 @@ export default function Section3() {
             <div className="container mx-auto px-4 sm:px-6">
                 {/* Tag Centered */}
                 <div className="flex justify-center mb-6">
-                    <Tag>GROW YOUR CHANNEL</Tag>
+                    <Tag>GROW CHANNEL</Tag>
                 </div>
 
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
                     {/* Left Side - Text Content */}
                     <div className="text-center lg:text-left max-w-3xl w-full">
                         <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight leading-tight">
-                            Grow your YouTube channel <br className="hidden sm:block" /> with AI powered Ads
+                            Grow your YouTube channel with AI powered Ads
                         </h1>
                         <p className="text-lg sm:text-xl text-black/50 mt-4 sm:mt-6">
                             Maximize every dollar by optimizing targeting, bidding data, and ad quality.

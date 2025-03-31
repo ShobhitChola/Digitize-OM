@@ -47,7 +47,6 @@ export default function LogoTicker() {
                                         src={logo.image} 
                                         key={logo.name} 
                                         alt={logo.name}
-                                        // style={{ filter: "invert(1)" }} 
                                         className="h-12 w-12"
                                     />
                                     <h1 className="font-semibold">{logo.name}</h1>

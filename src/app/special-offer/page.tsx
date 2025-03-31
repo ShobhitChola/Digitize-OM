@@ -44,7 +44,7 @@ export default function SpecialOfferPage() {
                         Get $100 in Free YouTube Ads
                     </h1>
                     <h2 className="text-3xl text-[#1A73E8] font-bold">
-                        Let's Launch Your First Profitable Campaign!
+                        Let&apos;s Launch Your First Profitable Campaign!
                     </h2>
                     <p className="text-gray-600 text-lg">
                         See if you qualify in under 60 seconds.

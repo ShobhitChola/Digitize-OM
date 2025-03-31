@@ -1,4 +1,4 @@
-export default function Thankyou({ onClose }: { onClose: () => void }) {
+export default function Thankyou({ }: { onClose: () => void }) {
     return <section className="py-8">
         <div className="container">
             <div className="flex flex-col items-center gap-4 text-center">

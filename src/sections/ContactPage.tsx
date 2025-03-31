@@ -4,7 +4,7 @@ import { useState } from "react";
 import Thankyou from "./Thankyou"; 
 import { useRouter } from "next/navigation";
 
-export default function EmailPopup({ onClose }: { onClose: () => void }) {
+export default function EmailPopup({ }: { onClose: () => void }) {
   const [formData, setFormData] = useState({
     name: "",
     industry: "",

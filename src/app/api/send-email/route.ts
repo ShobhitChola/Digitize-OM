@@ -58,8 +58,8 @@ export async function POST(req: Request) {
     const token = crypto.randomBytes(16).toString("hex");
     // Include name, industry, and email in the specialOfferUrl as query parameters
     const specialOfferUrl = shouldSendUserAndAdminEmails
-      ? `http://localhost:3000/special-offer?token=${token}&name=${encodeURIComponent(name)}&industry=${encodeURIComponent(industry)}&email=${encodeURIComponent(email)}`
-      : `http://localhost:3000/special-offer?token=${token}`; // For local testing
+      ? `https://digitize-om.vercel.app/special-offer?token=${token}&name=${encodeURIComponent(name)}&industry=${encodeURIComponent(industry)}&email=${encodeURIComponent(email)}`
+      : `https://digitize-om.vercel.app/special-offer?token=${token}`; // For local testing
 
     // Send user and admin emails only if name, industry, and email are provided
     if (shouldSendUserAndAdminEmails) {

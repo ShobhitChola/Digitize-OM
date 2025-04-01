@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, Suspense } from "react";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 
-export default function SpecialOfferPage() {
+function SpecialOfferContent() {
   const formRef = useRef<HTMLDivElement>(null);
   const searchParams = useSearchParams();
   const [formData, setFormData] = useState({
@@ -18,7 +18,7 @@ export default function SpecialOfferPage() {
   const email = searchParams.get("email") || "";
   const token = searchParams.get("token");
 
-  // Validate the token (optional, but recommended)
+  // Validate the token
   useEffect(() => {
     if (!token) {
       alert("Invalid access. Please use the link from your email.");
@@ -161,5 +161,13 @@ export default function SpecialOfferPage() {
         </form>
       </div>
     </div>
+  );
+}
+
+export default function SpecialOfferPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SpecialOfferContent />
+    </Suspense>
   );
 }

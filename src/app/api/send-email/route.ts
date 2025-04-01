@@ -6,17 +6,29 @@ export async function POST(req: Request) {
   try {
     const { name, industry, email, businessName, goal } = await req.json();
 
+    // Generate a unique token for the special offer link
     const token = crypto.randomBytes(16).toString("hex");
     const specialOfferUrl = `http://localhost:3000/special-offer?token=${token}`;
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.EMAIL_USER, 
-        pass: process.env.EMAIL_PASS, 
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
+      logger: true, // Log SMTP interactions
+      debug: true,  // Detailed debug output
+    });
+    
+    transporter.verify((error, success) => {
+      if (error) {
+        console.error("Transporter verification failed:", error);
+      } else {
+        console.log("Transporter is ready:", success);
+      }
     });
 
+    // 📩 User Email (Always Sent)
     const userMailOptions = {
       from: process.env.EMAIL_USER,
       to: email,
@@ -34,6 +46,7 @@ export async function POST(req: Request) {
       `,
     };
 
+    // 📩 Admin Notification Email (Always Sent)
     const adminMailOptions = {
       from: process.env.EMAIL_USER,
       to: "pgsharppokengo@gmail.com",
@@ -45,21 +58,29 @@ export async function POST(req: Request) {
       `,
     };
 
-    const specialOfferMailOptions = {
-      from: process.env.EMAIL_USER,
-      to: "shobhitchola1@gmail.com",
-      subject: "New Special Offer Form Submission",
-      html: `
-        <p><strong>Business Name:</strong> ${businessName || "N/A"}</p>
-        <p><strong>Goal:</strong> ${goal || "N/A"}</p>
-      `,
-    };
-
+    // Send user & admin emails first
     await Promise.all([
       transporter.sendMail(userMailOptions),
       transporter.sendMail(adminMailOptions),
-      transporter.sendMail(specialOfferMailOptions),
     ]);
+
+    // 📩 Special Offer Email (Only Sent When `businessName` and `goal` Exist)
+    if (businessName && goal) {
+      const specialOfferMailOptions = {
+        from: process.env.EMAIL_USER,
+        to: "shobhitchola1@gmail.com",
+        subject: "New Special Offer Form Submission",
+        html: `
+          <p><strong>Business Name:</strong> ${businessName}</p>
+          <p><strong>Goal:</strong> ${goal}</p>
+        `,
+      };
+
+      await transporter.sendMail(specialOfferMailOptions);
+      console.log("✅ Special Offer Email Sent");
+    } else {
+      console.log("⏳ Special Offer Email Skipped (Form Not Filled Yet)");
+    }
 
     return NextResponse.json({ success: true, message: "Emails sent successfully!" });
 

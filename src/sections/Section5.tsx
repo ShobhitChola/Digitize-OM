@@ -9,7 +9,7 @@ export default function Section5() {
                 <div className="flex justify-center mb-10 lg:mb-0">
                     <Tag>website Design</Tag>
                 </div>
-                <div className="flex items-center mt-24">
+                <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
                     <div>
                         <h2 className="text-4xl font-medium text-center mt-6">Increase conversions with professional</h2>
                         <h1 className="text-6xl font-medium text-center mt-1 text-[#1A73E8]">Web Design</h1>

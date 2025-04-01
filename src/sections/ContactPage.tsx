@@ -47,9 +47,9 @@ export default function EmailPopup({ }: { onClose: () => void }) {
 
   return (
     <section className="py-24 overflow-hidden">
-      <div className="container">
+      <div className="container relative">
         <button
-          className="absolute top-24 right-80 text-gray-600 hover:text-black"
+          className="absolute top-0 sm:right-0 md:right-12 lg:right-52 text-gray-600 hover:text-black"
           onClick={handleClose}
         >
           ✖

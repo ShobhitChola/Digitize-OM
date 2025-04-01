@@ -3,11 +3,16 @@ import sgMail from "@sendgrid/mail";
 import crypto from "crypto";
 
 // Define a type for SendGrid errors
+interface SendGridErrorResponse {
+  errors?: { message: string; field?: string }[];
+}
+
 interface SendGridError extends Error {
   response?: {
-    body?: any;
+    body?: SendGridErrorResponse;
   };
 }
+
 
 // Set SendGrid API key with a runtime check
 if (!process.env.SENDGRID_API_KEY) {

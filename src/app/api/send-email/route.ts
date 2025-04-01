@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import sgMail from "@sendgrid/mail";
 import crypto from "crypto";
 
-// Define a type for SendGrid errors
 interface SendGridErrorResponse {
   errors?: { message: string; field?: string }[];
 }
@@ -14,13 +13,11 @@ interface SendGridError extends Error {
 }
 
 
-// Set SendGrid API key with a runtime check
 if (!process.env.SENDGRID_API_KEY) {
   throw new Error("SENDGRID_API_KEY is not defined in environment variables");
 }
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-// Simple email validation regex
 const isValidEmail = (email: string): boolean => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
@@ -31,7 +28,6 @@ export async function POST(req: Request) {
     const { name, industry, email, businessName, goal } = await req.json();
     console.log("Request body:", { name, industry, email, businessName, goal });
 
-    // If name, industry, and email are provided, validate them and send user/admin emails
     let shouldSendUserAndAdminEmails = false;
     if (name && industry && email) {
       if (typeof name !== "string") {
@@ -56,17 +52,14 @@ export async function POST(req: Request) {
     }
 
     const token = crypto.randomBytes(16).toString("hex");
-    // Include name, industry, and email in the specialOfferUrl as query parameters
     const specialOfferUrl = shouldSendUserAndAdminEmails
       ? `https://digitize-om.vercel.app/special-offer?token=${token}&name=${encodeURIComponent(name)}&industry=${encodeURIComponent(industry)}&email=${encodeURIComponent(email)}`
-      : `https://digitize-om.vercel.app/special-offer?token=${token}`; // For local testing
+      : `https://digitize-om.vercel.app/special-offer?token=${token}`;
 
-    // Send user and admin emails only if name, industry, and email are provided
     if (shouldSendUserAndAdminEmails) {
-      // User Email
       const userMsg = {
         to: email,
-        from: "pgsharppokengo@gmail.com", // Verified sender email
+        from: "pgsharppokengo@gmail.com",
         subject: "Claim Your $100 in Free YouTube Ads!",
         html: `
           <p>Hi ${name},</p>
@@ -81,7 +74,6 @@ export async function POST(req: Request) {
         `,
       };
 
-      // Admin Notification Email
       const adminMsg = {
         to: "pgsharppokengo@gmail.com",
         from: "pgsharppokengo@gmail.com",
@@ -93,7 +85,6 @@ export async function POST(req: Request) {
         `,
       };
 
-      // Send user and admin emails
       await Promise.all([
         sgMail.send(userMsg),
         sgMail.send(adminMsg),
@@ -101,7 +92,6 @@ export async function POST(req: Request) {
       console.log("✅ User and Admin Emails Sent");
     }
 
-    // Special Offer Email (sent only if businessName and goal are provided)
     if (businessName && goal) {
       if (typeof businessName !== "string" || typeof goal !== "string") {
         return NextResponse.json(

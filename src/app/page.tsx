@@ -26,9 +26,7 @@ export default function Home() {
       <Section7 />
       <Features />
       <LogoTicker />
-      {/* <Introduction /> */}
       <Integrations />
-      {/* <Faqs /> */}
       <CallToAction />
       <Footer />
       </div>

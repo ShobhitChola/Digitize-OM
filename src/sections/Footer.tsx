@@ -8,7 +8,7 @@ const footerLinks = [
 ];
 
 export default function Footer() {
-    return <section className="py-16">
+    return (<section className="py-16">
         <div className="container">
             <div className="flex flex-col md:flex-row items-center md:justify-between gap-6">
                 <div>
@@ -25,5 +25,5 @@ export default function Footer() {
                 </div>
             </div>
         </div>
-    </section>;
+    </section>);
 }

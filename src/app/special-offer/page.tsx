@@ -12,13 +12,11 @@ function SpecialOfferContent() {
     goal: "",
   });
 
-  // Retrieve name, industry, and email from query parameters
   const name = searchParams.get("name") || "";
   const industry = searchParams.get("industry") || "";
   const email = searchParams.get("email") || "";
   const token = searchParams.get("token");
 
-  // Validate the token
   useEffect(() => {
     if (!token) {
       alert("Invalid access. Please use the link from your email.");
@@ -91,7 +89,6 @@ function SpecialOfferContent() {
         </div>
       </section>
 
-      {/* Form Section */}
       <div ref={formRef} className="bg-white p-6 shadow-lg rounded-lg mt-12">
         <h2 className="text-3xl font-bold text-center">Check Your Eligibility</h2>
         <p className="text-gray-600 text-center mb-6">

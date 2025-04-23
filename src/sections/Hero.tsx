@@ -23,7 +23,7 @@ export default function Hero() {
 
                     {/* Right Side - Video */}
                     <div className="flex justify-center -mt-6">
-                      <div className="relative w-[300px] h-[200px] sm:w-[500px] sm:h-[500px] md:w-[600px] md:h-[600px] lg:w-[700px] lg:h-[700px] xl:w-[900px] xl:h-[600px] rounded-3xl overflow-hidden">
+                      <div className="relative w-[400px] h-[400px] md:w-[600px] md:h-[600px] lg:w-[700px] lg:h-[700px] xl:w-[900px] xl:h-[600px] rounded-3xl overflow-hidden">
                         <video
                           src="/Final Youtube Ad - Redesigned (1).mp4"
                           autoPlay
@@ -34,7 +34,6 @@ export default function Hero() {
                         />
                       </div>
                     </div>
-
                 </div>
             </div>
         </section>

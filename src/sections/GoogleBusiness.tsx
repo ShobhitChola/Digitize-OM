@@ -32,7 +32,7 @@ export default function GoogleBusiness() {
 
           {/* Right Side - Responsive Video */}
           <div className="flex justify-center mt-6">
-            <div className="relative w-[300px] h-[200px] sm:w-[500px] sm:h-[400px] md:w-[700px] md:h-[500px] lg:w-[600px] lg:h-[500px] xl:w-[800px] xl:h-[600px] rounded-3xl overflow-hidden">
+            <div className="relative w-[400px] h-[300px] md:w-[700px] md:h-[500px] lg:w-[600px] lg:h-[500px] xl:w-[800px] xl:h-[600px] rounded-3xl overflow-hidden">
               <video
                 src="/Final Google Map AD - Redesigned.mp4"
                 autoPlay

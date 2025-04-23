@@ -22,7 +22,7 @@ export default function Section3() {
 
                     {/* Right Side - Responsive Video */}
                     <div className="flex justify-center -mt-6">
-                        <div className="relative w-[300px] h-[200px] sm:w-[500px] sm:h-[400px] md:w-[700px] md:h-[600px] lg:w-[600px] lg:h-[550px] xl:w-[900px] xl:h-[600px] rounded-3xl overflow-hidden">
+                        <div className="relative w-[500px] h-[300px] md:w-[700px] md:h-[600px] lg:w-[600px] lg:h-[550px] xl:w-[900px] xl:h-[600px] rounded-3xl overflow-hidden">
                             <video
                             src="/Final Graph AD - Redesigned (1).mp4"
                             autoPlay

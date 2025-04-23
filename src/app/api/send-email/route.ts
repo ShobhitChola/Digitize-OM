@@ -12,7 +12,6 @@ interface SendGridError extends Error {
   };
 }
 
-
 if (!process.env.SENDGRID_API_KEY) {
   throw new Error("SENDGRID_API_KEY is not defined in environment variables");
 }
@@ -59,7 +58,7 @@ export async function POST(req: Request) {
     if (shouldSendUserAndAdminEmails) {
       const userMsg = {
         to: email,
-        from: "pgsharppokengo@gmail.com",
+        from: "dayron@digitizeopenmedia.com",
         subject: "Claim Your $100 in Free YouTube Ads!",
         html: `
           <p>Hi ${name},</p>
@@ -75,8 +74,8 @@ export async function POST(req: Request) {
       };
 
       const adminMsg = {
-        to: "pgsharppokengo@gmail.com",
-        from: "pgsharppokengo@gmail.com",
+        to: "capture.emails.funnels@gmail.com",
+        from: "dayron@digitizeopenmedia.com",
         subject: "New Form Submission",
         html: `
           <p><strong>Name:</strong> ${name}</p>
@@ -100,8 +99,8 @@ export async function POST(req: Request) {
         );
       }
       const specialOfferMsg = {
-        to: "shobhitchola1@gmail.com",
-        from: "pgsharppokengo@gmail.com",
+        to: "special.ads.credit@gmail.com",
+        from: "dayron@digitizeopenmedia.com",
         subject: "New Special Offer Form Submission",
         html: `
           <p><strong>Business Name:</strong> ${businessName}</p>

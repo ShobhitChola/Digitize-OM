@@ -2,7 +2,7 @@ import Tag from "@/components/Tag";
 
 export default function Section3() {
     return (
-        <section className="py-24">
+        <section className="py-14 lg:py-0">
             <div className="container mx-auto px-4 sm:px-6">
                 {/* Tag Centered */}
                 <div className="flex justify-center mb-6">
@@ -21,10 +21,10 @@ export default function Section3() {
                     </div>
 
                     {/* Right Side - Responsive Video */}
-                    <div className="flex justify-center mt-6">
-                        <div className="relative w-[300px] h-[200px] sm:w-[400px] sm:h-[300px] md:w-[600px] md:h-[400px] lg:w-[700px] lg:h-[500px] xl:w-[800px] xl:h-[600px] rounded-3xl overflow-hidden">
+                    <div className="flex justify-center -mt-6">
+                        <div className="relative w-[300px] h-[200px] sm:w-[500px] sm:h-[400px] md:w-[700px] md:h-[600px] lg:w-[600px] lg:h-[550px] xl:w-[900px] xl:h-[600px] rounded-3xl overflow-hidden">
                             <video
-                            src="/MP4 Graph Animation.mp4"
+                            src="/Final Graph AD - Redesigned (1).mp4"
                             autoPlay
                             loop
                             muted

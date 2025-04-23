@@ -39,7 +39,7 @@ export default function EmailPopup({ onClose }: { onClose: () => void }) {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 pointer-events-auto backdrop-blur-sm">
-      <div className="bg-white sm:m-6 p-6 rounded-3xl shadow-lg max-w-md w-full relative">
+      <div className="bg-white m-6 p-6 rounded-3xl shadow-lg max-w-md w-full relative">
         <button
           className="absolute top-4 right-5 text-gray-600 hover:text-black"
           onClick={onClose}
